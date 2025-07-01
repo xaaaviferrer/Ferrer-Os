@@ -1,4 +1,4 @@
-#include <stdio.h> // comando clear i exit no hacen su funcion
+#include <stdio.h> 
 #include <string.h>
 #include <stdlib.h>
 
@@ -16,10 +16,10 @@ int main() {
         printf("This is a beta version, so it contains bugs and errors.\n");
     }
 
-    // Pedir nombre de usuario
+   
     printf("Please enter your username: ");
     scanf("%s", username);
-    getchar(); // consumir salto de línea
+    getchar(); 
 
     printf("Hello %s, welcome to Ferrer Os.\n", username);
 
@@ -28,20 +28,19 @@ int main() {
         printf("@%s~$: ", username);
         if (fgets(command, sizeof(command), stdin) == NULL) break;
 
-        // Eliminar el salto de línea final si existe
         size_t len = strlen(command);
         if (len > 0 && command[len - 1] == '\n') {
             command[len - 1] = '\0';
         }
 
         if (strcmp(command, "clear") == 0) {
-            printf("\033[H\033[J");  // Limpiar pantalla
+            printf("\033[H\033[J"); 
         } else if (strcmp(command, "command") == 0) {
             printf("This is the first command created in Ferrer Os (beta): %s\n", command);
-        } else if (strcmp(command, "exit") == 0) {// no cierra el programa
+        } else if (strcmp(command, "exit") == 0) { 
             exit(0);
              break;
-        } else if (strcmp(command,"help") == 0) {        // comando help
+        } else if (strcmp(command,"help") == 0) {        
             printf ( "Available commands \n");
             printf ("clear - Clear the screen \n");
             printf ("command - Show a message about the first command\n");
