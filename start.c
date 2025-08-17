@@ -54,6 +54,8 @@ int main() {
             printf ("pwd - Show the current working directory\n");
             printf ("whoami - Show your username\n");
             printf ("version - Show the version of Ferrer Os\n");
+            printf ("uptime - Show te system uptime\n");
+            printf ("reboot - Reboot system\n");
 
         } else if (strcmp(command,"ls") == 0) {
             system("ls");            /* code */
@@ -63,6 +65,14 @@ int main() {
             printf("Your username is: %s\n", username);
         }else if (strcmp(command, "version") == 0) {
             printf ("The actually Ferrer Os version is %.1f\n", version);
+        }else if (strcmp(command, "uptime") == 0) {
+            system("uptime");
+        }else if (strcmp(command, "reboot") == 0) {
+            printf("rebooting system...\n");
+            system("reboot");  
+        }else if (strcmp(command, "") == 0) {
+            
+        }
         } else {
             printf("Command not recognized. Please try again\n");
         }
